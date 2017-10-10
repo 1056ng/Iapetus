@@ -32,7 +32,8 @@ $app->setEventsManager($eventsManager);
 ```php
 function beforeExecuteRoute(\Phalcon\Events\Event $event, \Phalcon\Di\Injectable $injectable) {
   $di = $this->getDi();
-  $request = $di->getRequest();
-  $di->getEventsManager()->fire(\Iapetus\EventKeys::check, $injectable, $request->getJsonRawBody());
+  $body = $di->getRequest()->getJsonRawBody();
+  $schemaPath = '/var/www/xxx/xxxxx.json';
+  $di->getEventsManager()->fire(\Iapetus\EventKeys::check, $injectable, ['data' => $body, 'schema' => $schemaPath]);
 }
 ```
