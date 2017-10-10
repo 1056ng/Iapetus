@@ -16,7 +16,6 @@
     }],
     "require": {
       "php": ">=7.1.0",
-      "rize/uri-template": "~0.3",
       "justinrainbow/json-schema": "~5.0"
     },
     "autoload": {
